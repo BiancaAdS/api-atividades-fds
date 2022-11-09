@@ -59,10 +59,14 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://www.test-cors.org",
+    '127.0.0.1',
+    'https://fast-design-sprint.vercel.app/'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://www.test-cors.org',
+    '127.0.0.1',
+    'https://fast-design-sprint.vercel.app/'
 ]
 
 CORS_ALLOW_CREDENTIALS = True
