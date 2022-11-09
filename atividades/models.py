@@ -15,7 +15,7 @@ class AtividadesEtapa1(models.Model):
     descrTemp = models.CharField(max_length=500)
     tempo = models.IntegerField()
     macro = models.CharField(max_length=60)
-    create_at = models.DateField(auto_now_add=True)
+    create_at = models.DateTimeField(auto_now_add=True)
     
 class AtividadesEtapa2(models.Model):
     id_atv = models.UUIDField(primary_key=True, default=uuid4, editable=False)
@@ -28,7 +28,7 @@ class AtividadesEtapa2(models.Model):
     descrTemp = models.CharField(max_length=500)
     tempo = models.IntegerField()
     macro = models.CharField(max_length=60)
-    create_at = models.DateField(auto_now_add=True)
+    create_at = models.DateTimeField(auto_now_add=True)
 
 class AtividadesEtapa3(models.Model):
     id_atv = models.UUIDField(primary_key=True, default=uuid4, editable=False)
@@ -41,7 +41,7 @@ class AtividadesEtapa3(models.Model):
     descrTemp = models.CharField(max_length=500)
     tempo = models.IntegerField()
     macro = models.CharField(max_length=60)
-    create_at = models.DateField(auto_now_add=True)
+    create_at = models.DateTimeField(auto_now_add=True)
     
 class AtividadesEtapa4(models.Model):
     id_atv = models.UUIDField(primary_key=True, default=uuid4, editable=False)
@@ -54,4 +54,4 @@ class AtividadesEtapa4(models.Model):
     descrTemp = models.CharField(max_length=500)
     tempo = models.IntegerField()
     macro = models.CharField(max_length=60)
-    create_at = models.DateField(auto_now_add=True)
+    create_at = models.DateTimeField(auto_now_add=True)
