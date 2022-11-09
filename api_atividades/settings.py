@@ -62,7 +62,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'www.test-cors.org',
+    'https://www.test-cors.org',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
