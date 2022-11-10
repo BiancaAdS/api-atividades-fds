@@ -59,4 +59,5 @@ O seguinte comando deve ser executado no diretório que contém o arquivo *manag
 
 
 Para acessar a aplicação acesse: ` http://127.0.0.1:8000/ ` 
+
 Para acessar a documentação acesse: ` http://127.0.0.1:8000/swagger `
