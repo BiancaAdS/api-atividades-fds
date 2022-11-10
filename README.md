@@ -47,7 +47,7 @@ Caminhe até o diretório fast_design_sprint e realize as seguintes edições no
     SECRET_KEY=SecretKey
     ```
 
-Caso queira gerar uma SECRET_KEY, execute o seguinte comando: `python -c "import secrets; print(secrets.token_urlsafe())"`
+Caso queira gerar uma SECRET_KEY, execute o seguinte comando no terminal: `python -c "import secrets; print(secrets.token_urlsafe())"`
 
 
 ## Rodando localmente
