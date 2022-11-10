@@ -1,4 +1,6 @@
-API Atividade Fast Design Sprint implementada para o TCC: 
+# API Atividade Fast Design Sprint
+
+API implementada para o TCC: 
 **"Instanciação e Avaliação de modelo de agenda do Design Sprint para uso em um Hackathon"**.
 Para a implementação da aplicação foi utilizado Django Framework para realizar o desenvolvimento da API responsável por realizar o cadastros das atividades para serem utilizadas na Aplicação web Fast Design Sprint.
 
@@ -45,7 +47,7 @@ Caminhe até o diretório fast_design_sprint e realize as seguintes edições no
     SECRET_KEY=SecretKey
     ```
 
-Caso queira gerar uma SECRET_KEY, execute o seguinte comando: `python -c "import secrets; print(secrets.token_urlsafe())"`
+Caso queira gerar uma SECRET_KEY, execute o seguinte comando no terminal: `python -c "import secrets; print(secrets.token_urlsafe())"`
 
 
 ## Rodando localmente
@@ -57,4 +59,5 @@ O seguinte comando deve ser executado no diretório que contém o arquivo *manag
 
 
 Para acessar a aplicação acesse: ` http://127.0.0.1:8000/ ` 
+
 Para acessar a documentação acesse: ` http://127.0.0.1:8000/swagger `
