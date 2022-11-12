@@ -27,5 +27,3 @@ class Etapa(models.Model):
     id_etada = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     nomeEtapa = models.CharField(max_length=60, default="", blank=True)
     sequencia = models.IntegerField(unique=True)
-   
-    atividade = models.ForeignKey("AtividadesEtapa", on_delete=models.CASCADE, related_name='Atividade')
