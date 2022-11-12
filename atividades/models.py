@@ -3,55 +3,29 @@ from uuid import uuid4
 
 # Create your models here.
 
-
-class AtividadesEtapa1(models.Model):
-    id_atv = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    title = models.CharField(max_length=500, default="", blank=True)
-    titleAtv = models.CharField(max_length=500, default="", blank=True)
+class AtividadesEtapa(models.Model):
+    id_atividade = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    titulo = models.CharField(max_length=500, default="", blank=True)
+    tituloAtividade = models.CharField(max_length=500, default="", blank=True)
     tipo = models.CharField(max_length=60, default="", blank=True)
-    descr = models.CharField(max_length=3800, default="", blank=True)
+    descricao = models.CharField(max_length=3800, default="", blank=True)
     link = models.CharField(max_length=500, default="", blank=True)
-    descrLink = models.CharField(max_length=500, default="", blank=True)
-    descrTemp = models.CharField(max_length=500, default="", blank=True)
-    tempo = models.IntegerField(default=0, blank=True)
-    macro = models.CharField(max_length=60, default="", blank=True)
-    create_at = models.DateTimeField(auto_now_add=True)
+    descricaoLink = models.CharField(max_length=500, default="", blank=True)
+    descricaoTempo = models.CharField(max_length=500, default="", blank=True)
+    tempoEstimado = models.IntegerField(default=0, blank=True)
+    sequencia = models.IntegerField(unique=True)
+    etapaPertencente = models.ForeignKey("Etapa", on_delete=models.CASCADE, related_name='etapaPertencente')
+    criado_em = models.DateTimeField(auto_now_add=True)
     
-class AtividadesEtapa2(models.Model):
-    id_atv = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    title = models.CharField(max_length=500, default="", blank=True)
-    titleAtv = models.CharField(max_length=500, default="", blank=True)
-    tipo = models.CharField(max_length=60, default="", blank=True)
-    descr = models.CharField(max_length=3800, default="", blank=True)
-    link = models.CharField(max_length=500, default="", blank=True)
-    descrLink = models.CharField(max_length=500, default="", blank=True)
-    descrTemp = models.CharField(max_length=500, default="", blank=True)
-    tempo = models.IntegerField(default=0, blank=True)
-    macro = models.CharField(max_length=60, default="", blank=True)
-    create_at = models.DateTimeField(auto_now_add=True)
 
-class AtividadesEtapa3(models.Model):
-    id_atv = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    title = models.CharField(max_length=500, default="", blank=True)
-    titleAtv = models.CharField(max_length=500, default="", blank=True)
-    tipo = models.CharField(max_length=60, default="", blank=True)
-    descr = models.CharField(max_length=3800, default="", blank=True)
-    link = models.CharField(max_length=500, default="", blank=True)
-    descrLink = models.CharField(max_length=500, default="", blank=True)
-    descrTemp = models.CharField(max_length=500, default="", blank=True)
-    tempo = models.IntegerField(default=0, blank=True)
-    macro = models.CharField(max_length=60)
-    create_at = models.DateTimeField(auto_now_add=True)
+class SubAtividades(models.Model):
+    id_subAtividade = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    atividade = models.ForeignKey("AtividadesEtapa", on_delete=models.CASCADE, related_name='subAtividades')
     
-class AtividadesEtapa4(models.Model):
-    id_atv = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-    title = models.CharField(max_length=500, default="", blank=True)
-    titleAtv = models.CharField(max_length=500, default="", blank=True)
-    tipo = models.CharField(max_length=60, default="", blank=True)
-    descr = models.CharField(max_length=3800, default="", blank=True)
-    link = models.CharField(max_length=500, default="", blank=True)
-    descrLink = models.CharField(max_length=500, default="", blank=True)
-    descrTemp = models.CharField(max_length=500, default="", blank=True)
-    tempo = models.IntegerField(default=0, blank=True)
-    macro = models.CharField(max_length=60, default="", blank=True)
-    create_at = models.DateTimeField(auto_now_add=True)
+    
+class Etapa(models.Model):
+    id_etada = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    nomeEtapa = models.CharField(max_length=60, default="", blank=True)
+    sequencia = models.IntegerField(unique=True)
+   
+    atividade = models.ForeignKey("AtividadesEtapa", on_delete=models.CASCADE, related_name='Atividade')

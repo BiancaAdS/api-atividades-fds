@@ -7,34 +7,17 @@ from rest_framework.parsers import FormParser
 
 
 @parser_classes([FormParser]) 
-class AtividadesEtapa1ViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.AtividadesEtapa1Serializer
-    queryset = models.AtividadesEtapa1.objects.all()
+class AtividadesEtapaViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.AtividadesEtapaSerializer
+    queryset = models.AtividadesEtapa.objects.all()
     
     filter_backends = [filters.OrderingFilter]
-    ordering_fields = ['create_at']
+    ordering_fields = ['criado_em', 'sequencia']
 
-    
-@parser_classes([FormParser])
-class AtividadesEtapa2ViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.AtividadesEtapa2Serializer
-    queryset = models.AtividadesEtapa2.objects.all()
-    
-    filter_backends = [filters.OrderingFilter]
-    ordering_fields = ['create_at']
-
-@parser_classes([FormParser])
-class AtividadesEtapa3ViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.AtividadesEtapa3Serializer
-    queryset = models.AtividadesEtapa3.objects.all()
-     
-    filter_backends = [filters.OrderingFilter]
-    ordering_fields = ['create_at']
-
-@parser_classes([FormParser])
-class AtividadesEtapa4ViewSet(viewsets.ModelViewSet):
-    serializer_class = serializers.AtividadesEtapa4Serializer
-    queryset = models.AtividadesEtapa4.objects.all()
+@parser_classes([FormParser]) 
+class EtapasViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.EtapasSerializer
+    queryset = models.Etapa.objects.all()
     
     filter_backends = [filters.OrderingFilter]
-    ordering_fields = ['create_at']
+    ordering_fields = ['sequencia']

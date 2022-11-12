@@ -1,18 +1,3 @@
-"""api_atividades URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include, re_path
 
@@ -22,7 +7,7 @@ from drf_yasg import openapi
 
 from rest_framework import routers
 
-from atividades.api import viewsets as atividadesviewsets
+from atividades.api import viewsets
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -39,11 +24,8 @@ schema_view = get_schema_view(
 
 route = routers.DefaultRouter()
 
-route.register(r'atividades/etapa1', atividadesviewsets.AtividadesEtapa1ViewSet, basename='AtividadesEtapa1')
-route.register(r'atividades/etapa2', atividadesviewsets.AtividadesEtapa2ViewSet, basename='AtividadesEtapa2')
-route.register(r'atividades/etapa3', atividadesviewsets.AtividadesEtapa3ViewSet, basename='AtividadesEtapa3')
-route.register(r'atividades/etapa4', atividadesviewsets.AtividadesEtapa4ViewSet, basename='AtividadesEtapa4')
-
+route.register(r'atividades/', viewsets.AtividadesEtapaViewSet, basename='AtividadesEtapa')
+route.register(r'etapas/', viewsets.EtapasViewSet, basename='Etapas')
 
 
 urlpatterns = [

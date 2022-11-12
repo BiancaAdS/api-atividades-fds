@@ -1,22 +1,17 @@
 from rest_framework import serializers
 from atividades import models
 
-class AtividadesEtapa1Serializer(serializers.ModelSerializer):
+class AtividadesEtapaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.AtividadesEtapa1
+        model = models.AtividadesEtapa
         fields = '__all__'
 
-class AtividadesEtapa2Serializer(serializers.ModelSerializer):
+class SubAtividadesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.AtividadesEtapa2
+        model = models.SubAtividades
         fields = '__all__'
 
-class AtividadesEtapa3Serializer(serializers.ModelSerializer):
+class EtapasSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.AtividadesEtapa3
-        fields = '__all__'
-        
-class AtividadesEtapa4Serializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.AtividadesEtapa4
+        model = models.Etapa
         fields = '__all__'
