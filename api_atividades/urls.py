@@ -24,8 +24,8 @@ schema_view = get_schema_view(
 
 route = routers.DefaultRouter()
 
-route.register(r'atividades/', viewsets.AtividadesEtapaViewSet, basename='AtividadesEtapa')
-route.register(r'etapas/', viewsets.EtapasViewSet, basename='Etapas')
+route.register(r'atividades', viewsets.AtividadesEtapaViewSet, basename='AtividadesEtapa')
+route.register(r'etapas', viewsets.EtapasViewSet, basename='Etapas')
 
 
 urlpatterns = [
